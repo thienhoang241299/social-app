@@ -25,7 +25,7 @@ export default function InputLinks() {
       dispatch(chooseVideo({ link: "", embed: "" }));
       // Nếu hợp lệ, dispatch action "add" để thêm link vào store
       dispatch(add(link));
-      alert("Nhap thanh cong")
+
     } else {
       // Nếu không hợp lệ, hiển thị thông báo lỗi
       alert("Vui lòng nhập Link hợp lệ");
