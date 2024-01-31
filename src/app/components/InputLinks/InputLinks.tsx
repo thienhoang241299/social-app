@@ -10,7 +10,11 @@ export default function InputLinks() {
   };
   const handelInputLink = () => {
     dispatch(chooseVideo({ link: "", embed: "" }));
-    dispatch(add(link));
+    if (link.includes("www.youtube.com") || link.includes("youtu.be") || link.includes("www.instagram.com") || link.includes("www.tiktok.com")) {
+      dispatch(add(link));
+    } else {
+      alert("Vui long nhap Link hop le");
+    }
   };
   return (
     <div className="my-4 w-4/5">
