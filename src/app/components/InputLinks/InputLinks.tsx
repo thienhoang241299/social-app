@@ -18,13 +18,14 @@ export default function InputLinks() {
 
   // Hàm xử lý khi nhấn nút "Add Link"
   const handelInputLink = () => {
-    // Reset thuộc tính "link" và "embed" trong store (có thể để chuẩn bị cho link mới)
-    dispatch(chooseVideo({ link: "", embed: "" }));
-
+    
     // Kiểm tra xem link nhập vào có hợp lệ (từ YouTube, Instagram, hoặc TikTok)
     if (link.includes("www.youtube.com") || link.includes("youtu.be") || link.includes("www.instagram.com") || link.includes("www.tiktok.com")) {
+      // Reset thuộc tính "link" và "embed" trong store (có thể để chuẩn bị cho link mới)
+      dispatch(chooseVideo({ link: "", embed: "" }));
       // Nếu hợp lệ, dispatch action "add" để thêm link vào store
       dispatch(add(link));
+      alert("Nhap thanh cong")
     } else {
       // Nếu không hợp lệ, hiển thị thông báo lỗi
       alert("Vui lòng nhập Link hợp lệ");
